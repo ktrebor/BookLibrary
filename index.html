@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="main-menu">
+        <div class="logo">
+            <a href="#"><img class="logo-header" src="/images/odin-lined.png" alt="The Odin Project Logo" /></a>
+            <a href="#">TheOdinProject - Book Library</a>
+        </div>
+        <div class="menu-items">
+            <ul>
+                <li><a href="#" class="nav-links">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="add">
+            <button class="button" id="add-book">Add a book</button>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <p>Title: <span>Game Of Thrones</span></p>
+                <p>Author: <span>George R. R. Martin</span></p>
+                <p>Pages: <span>250</span></p>
+                <p>
+                    <label for="read">
+                        <span class="yes">Read</span>
+                    </label>
+                    <input id="read" name="read" type="checkbox">
+                </p>
+            </div>
+            <div class="card">
+                <p>Title: <span>Game Of Thrones</span></p>
+                <p>Author: <span>George R. R. Martin</span></p>
+                <p>Pages: <span>250</span></p>
+                <p>
+                    <label for="read">
+                        <span class="yes">Read</span>
+                    </label>
+                    <input id="read" name="read" type="checkbox">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="form hidden">
+        <h2 class="form-title">Add a Book</h2>
+        <form action="#" method="post">
+            <div class="inputs">
+                <div class='form-row'>
+                    <label for='book-title'>Title</label>
+                    <input id='book-title' name='book-title' type='text' />
+                </div>
+                <div class='form-row'>
+                    <label for='book-author'>Author</label>
+                    <input id='book-author' name='book-author' type='text' />
+                </div>
+                <div class='form-row'>
+                    <label for='book-pages'>Pages</label>
+                    <input id='book-pages' name='book-pages' type='text' />
+                </div>
+                <div class='form-row'>
+                    <label for="read">
+                        <span class="yes">Read</span>
+                    </label>
+                    <input id="read" name="read" type="checkbox">
+                </div>
+            </div>
+            <div>
+                <button class="button">Add</button>
+                <button class="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
