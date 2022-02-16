@@ -26,29 +26,7 @@
         <div class="add">
             <button class="button" id="add-book">Add a book</button>
         </div>
-        <div class="cards">
-            <div class="card">
-                <p>Title: <span>Game Of Thrones</span></p>
-                <p>Author: <span>George R. R. Martin</span></p>
-                <p>Pages: <span>250</span></p>
-                <p>
-                    <label for="read">
-                        <span class="yes">Read</span>
-                    </label>
-                    <input id="read" name="read" type="checkbox">
-                </p>
-            </div>
-            <div class="card">
-                <p>Title: <span>Game Of Thrones</span></p>
-                <p>Author: <span>George R. R. Martin</span></p>
-                <p>Pages: <span>250</span></p>
-                <p>
-                    <label for="read">
-                        <span class="yes">Read</span>
-                    </label>
-                    <input id="read" name="read" type="checkbox">
-                </p>
-            </div>
+        <div class="cards" id="cards">
         </div>
     </div>
     <div class="form hidden">
@@ -74,11 +52,11 @@
                     <input id="read" name="read" type="checkbox">
                 </div>
             </div>
-            <div>
-                <button class="button">Add</button>
-                <button class="button">Cancel</button>
-            </div>
         </form>
+        <div>
+            <button class="button" id="add">Add</button>
+            <button class="button" id="cancel">Cancel</button>
+        </div>
     </div>
 </body>
 
