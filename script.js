@@ -45,6 +45,7 @@ function addBookToLibrary() {
     displayBook();
 }
 
+//establishes either the input is checked or not by the user
 function getStatus() {
     if(statusInput.checked) return true;
     else return false;
@@ -59,7 +60,7 @@ function clearForm () {
     showForm();
 }
 
-//obtaining the last item from the array
+//obtaining the last hetem from the array
 function displayBook() {
     const display = document.getElementById('cards');
     const books = document.querySelectorAll('.card');
@@ -79,18 +80,38 @@ function createBook(item) {
     const authorCard = document.createElement('p');
     const pagesCard = document.createElement('p');
     const removeButton = document.createElement('button');
+    const readButton = document.createElement('button');
     
+    //book title
     card.classList.add('card');
     card.setAttribute('data-attribute', myLibrary.indexOf(item));
     titleCard.textContent = "Title: " + item.title;
     card.appendChild(titleCard);
     
+    //book author
     authorCard.textContent = "Author: " + item.author;
     card.appendChild(authorCard);
 
+    //book pages
     pagesCard.textContent = "Pages: " + item.pages;
     card.appendChild(pagesCard);
 
+    //read button
+    readButton.classList.add('button');
+    card.appendChild(readButton);
+    //set the button to read or not read
+    if(item.status === false) {
+        readButton.textContent = 'Not Read';
+    } else {
+        readButton.textContent = 'Read';
+    }
+
+    readButton.addEventListener('click', () => {
+        item.status = !item.status;
+        displayBook();
+    });
+
+    //remove button
     removeButton.classList.add('button');
     removeButton.setAttribute('id', 'remove');
     removeButton.textContent = "Remove";
