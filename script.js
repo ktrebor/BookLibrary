@@ -69,7 +69,6 @@ function displayBook() {
     for (let i = 0; i < myLibrary.length; i++) {
         createBook(myLibrary[i]);
     }
-    console.log(myLibrary);
 }
 
 //create and display the card
@@ -97,13 +96,16 @@ function createBook(item) {
     card.appendChild(pagesCard);
 
     //read button
-    readButton.classList.add('button');
+    readButton.classList.add('status-btn');
     card.appendChild(readButton);
-    //set the button to read or not read
+    //set the button text to read or not read
     if(item.status === false) {
         readButton.textContent = 'Not Read';
+        readButton.style.backgroundColor = '#ef4444';
+        readButton.style.borderColor = '#ef4444';
     } else {
         readButton.textContent = 'Read';
+        readButton.style.backgroundColor = '#15803d';
     }
 
     readButton.addEventListener('click', () => {
@@ -111,8 +113,7 @@ function createBook(item) {
         displayBook();
     });
 
-    //remove button
-    removeButton.classList.add('button');
+    removeButton.classList.add('remove-btn');
     removeButton.setAttribute('id', 'remove');
     removeButton.textContent = "Remove";
     card.appendChild(removeButton);

@@ -1,18 +1,26 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
+:root {
+    --main-bg-black: #18181b;
+    --main-white: #fafafa;
+    --second-white: #e5e5e5;
+    --btn-green: #15803d;
+    --card-bg-grey: #e7e5e4;
+    --attention-red: #ef4444;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-
 
 /* menu */
 .main-menu {
-    background-color: black;
+    background-color: var(--main-bg-black);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +33,7 @@
 
 a {
     font-size: 20px;
-    color: white;
+    color: var(--main-white);
 }
 
 .logo {
@@ -44,17 +52,15 @@ a {
 }
 
 .button {
-    background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #18ab29;
-	display:inline-block;
+    background-color: var(--btn-green);
+	border-radius: 15px;
+	border:1px solid var(--btn-green);
+	display: inline-block;
 	cursor: pointer;
-	color:#ffffff;
+	color: var(--main-white);
 	font-family: Arial;
-	font-size: 1rem;
-	padding: 16px 31px;
-	text-decoration: none;
-	text-shadow:0px 1px 0px #2f6627;
+	font-size: 1.2rem;
+	padding: 20px;
 }
 
 /* Book Cards */
@@ -69,17 +75,78 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: aquamarine;
+    background-color: var(--card-bg-grey);
+    border: 1px solid var(--main-bg-black);
+    border-radius: 15px;
     padding: 40px 20px;
+    gap: 20px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+
+/* Form design */
+.form-title {
+    font-size: 2.2rem;
+    padding: 40px;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-bottom: 20px;
+}
+
+.inputs label {
+    display: block;
+    font-size: 1rem;
+}
+
+input[type='text'] {
+  background-color: var(--main-white);
+  border: 1px solid var(--second-white);
+  border-radius: 8px;
+  width: 200px;
+  padding: 7px;
+  font-size: 1rem;
+}
+
+
+.btns {
+    display: flex;
+    gap: 20px;
 }
 
 .hidden {
     display: none;
+}
+
+.remove-btn {
+    background-color: var(--attention-red);
+	border-radius: 15px;
+	border: 1px solid var(--attention-red);
+	display: inline-block;
+	cursor: pointer;
+	color: var(--main-white);
+	font-family: Arial;
+	font-size: 1rem;
+	padding: 10px;
+}
+
+.status-btn {
+    background-color: var(--btn-green);
+	border-radius: 15px;
+	border: 1px solid var(--btn-green);
+	display: inline-block;
+	cursor: pointer;
+	color: var(--main-white);
+	font-family: Arial;
+	font-size: 1rem;
+	padding: 10px;
 }
