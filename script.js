@@ -9,6 +9,7 @@ let addButton = document.querySelector('#add');
 let titleInput = document.querySelector('#book-title');
 let authorInput = document.querySelector('#book-author');
 let pagesInput = document.querySelector('#book-pages');
+let statusInput = document.querySelector('#status');
 
 //Event Listeners
 addBook.addEventListener("click", showForm);
@@ -25,10 +26,11 @@ function showForm() {
 let myLibrary = [];
 
 //Construtor - Book
-function Book(title, author, pages) {
+function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.status = status;
 }
 
 //add the new book to the end of the array
@@ -36,10 +38,16 @@ function addBookToLibrary() {
     let title = titleInput.value;
     let author = authorInput.value;
     let pages = pagesInput.value;
-    let newBook = new Book (title, author, pages);
+    let status = getStatus();
+    let newBook = new Book (title, author, pages, status);
     myLibrary.push(newBook);
     clearForm();
     displayBook();
+}
+
+function getStatus() {
+    if(statusInput.checked) return true;
+    else return false;
 }
 
 //cleares the form and bring back the card div
@@ -47,6 +55,7 @@ function clearForm () {
     titleInput.value = "";
     authorInput.value = "";
     pagesInput.value = "";
+    statusInput.checked = false;
     showForm();
 }
 
@@ -59,6 +68,7 @@ function displayBook() {
     for (let i = 0; i < myLibrary.length; i++) {
         createBook(myLibrary[i]);
     }
+    console.log(myLibrary);
 }
 
 //create and display the card
@@ -93,4 +103,3 @@ function createBook(item) {
         displayBook();
     });
 }
-    
