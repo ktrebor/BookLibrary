@@ -4,7 +4,6 @@ let contentDiv = document.querySelector('.content');
 let formDiv = document.querySelector('.form');
 let cancelButton = document.querySelector('#cancel');
 let addButton = document.querySelector('#add');
-let readCheck = document.querySelector('#read');
 
 //Dom Object Forms
 let titleInput = document.querySelector('#book-title');
@@ -23,9 +22,7 @@ function showForm() {
 }
 
 //creating and empty array
-let myLibrary = [
-    
-];
+let myLibrary = [];
 
 //Construtor - Book
 function Book(title, author, pages) {
@@ -54,13 +51,15 @@ function clearForm () {
 }
 
 //obtaining the last item from the array
-function displayBook () { 
-    let lastElement = myLibrary[myLibrary.length - 1];
-    createBook(lastElement);
-    console.log(lastElement);
-    console.log(myLibrary);
-};
+function displayBook() {
+    const display = document.getElementById('cards');
+    const books = document.querySelectorAll('.card');
+    books.forEach(book => display.removeChild(book));
 
+    for (let i = 0; i < myLibrary.length; i++) {
+        createBook(myLibrary[i]);
+    }
+}
 
 //create and display the card
 function createBook(item) {
@@ -88,4 +87,10 @@ function createBook(item) {
     card.appendChild(removeButton);
 
     cards.appendChild(card);
+
+    removeButton.addEventListener('click', () => {
+        myLibrary.splice(myLibrary.indexOf(item),1);
+        displayBook();
+    });
 }
+    
